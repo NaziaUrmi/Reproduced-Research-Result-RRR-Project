@@ -42,9 +42,14 @@ Before using this repository to reproduce results, please ensure you have the fo
 
 ## Installation
 
-To set up your environment for running the reproductions in this repository, follow these steps:
+Reproducing experiments reliably requires an isolated environment. Below are detailed steps to set up your system.
 
-1. **Clone this Repository:** Start by cloning the RRR Project repository to your local machine:
-   ```bash
-   git clone https://github.com/your-username/rrr-project.git
-   cd rrr-project
+### 1. Create a Virtual Environment (Recommended)
+Choose one of the following methods to avoid dependency conflicts:
+
+#### a. Using Conda
+```bash
+# Create an environment named "rrr-env" with Python 3.9
+conda create --name rrr-env python=3.9 -y
+conda activate rrr-env
+#### b. Using venv (Linux/macOS)
