@@ -89,7 +89,7 @@ pip install -r requirements.txt
 # For Conda environment files
 conda env update --file environment.yml --prune
 ```
-Note: If a notebook lives in its own folder with a separate requirements.txt (e.g., satmae/requirements.txt), cd into that folder before running the install command.
+**Note:** If a notebook lives in its own folder with a separate requirements.txt (e.g., satmae/requirements.txt), cd into that folder before running the install command.
 
 ### 4. Launch Jupyter
 Start the interactive environment and open notebooks:
@@ -105,15 +105,15 @@ You should see a browser window displaying the repository contents. Click on a .
 ## Usage
 Follow these general guidelines when working with the reproduction notebooks:
 
-Select a Notebook: Identify the paper you want to reproduce (e.g., textnerf.ipynb).
+**Select a Notebook:** Identify the paper you want to reproduce (e.g., textnerf.ipynb).
 
-Run Cells Sequentially: Execute cells in order to ensure environment setup, data download, model execution, and result verification occur in the correct sequence.
+**Run Cells Sequentially:** Execute cells in order to ensure environment setup, data download, model execution, and result verification occur in the correct sequence.
 
-Data Handling: Notebooks automatically download or preprocess data when possible. If manual steps are required, instructions are provided in markdown cells.
+**Data Handling:** Notebooks automatically download or preprocess data when possible. If manual steps are required, instructions are provided in markdown cells.
 
-Verify Results: Many notebooks include assertions or comparison tables that display the paper’s reported metrics alongside reproduced values.
+**Verify Results:** Many notebooks include assertions or comparison tables that display the paper’s reported metrics alongside reproduced values.
 
-Troubleshooting: Check error messages carefully, ensure you activated the correct environment, and validate that dependencies match the versions specified in the notebook. Opening an issue with detailed logs helps maintainers assist you faster.
+**Troubleshooting:** Check error messages carefully, ensure you activated the correct environment, and validate that dependencies match the versions specified in the notebook. Opening an issue with detailed logs helps maintainers assist you faster.
 
 Example: To reproduce the AdaSlot experiments:
 ```bash
@@ -125,13 +125,13 @@ Example: To reproduce the AdaSlot experiments:
 ## Contributing
 We welcome contributions at any level. To add a new reproduction or improve existing ones:
 
-Fork & Branch: Fork this repository and create a feature branch.
+**Fork & Branch:** Fork this repository and create a feature branch.
 
-Add Your Reproduction: Follow the Adding a New Reproduction guidelines.
+**Add Your Reproduction:** Follow the Adding a New Reproduction guidelines.
 
-Document Thoroughly: Ensure your notebook includes context, code comments, and result comparisons.
+**Document Thoroughly:** Ensure your notebook includes context, code comments, and result comparisons.
 
-Open a Pull Request: Describe your changes, link to the paper, and summarize reproduction results.
+**Open a Pull Request:** Describe your changes, link to the paper, and summarize reproduction results.
 
 All contributions should include clear instructions and be tested end-to-end in a fresh environment.
 
@@ -140,6 +140,6 @@ This project is licensed under the MIT License. See the LICENSE file for full de
 Reproduced code relies on third-party repositories and datasets, which maintain their original licenses.
 
 ## Contact
-GitHub Issues: Open issues or discussions in the repository for questions or suggestions.
+**GitHub Issues:** Open issues or discussions in the repository for questions or suggestions.
 
 I appreciate your feedback and contributions to strengthen reproducibility in research!
