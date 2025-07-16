@@ -52,4 +52,94 @@ Choose one of the following methods to avoid dependency conflicts:
 # Create an environment named "rrr-env" with Python 3.9
 conda create --name rrr-env python=3.9 -y
 conda activate rrr-env
+```
+
 #### b. Using venv (Linux/macOS)
+```bash
+# Create and activate a venv environment
+python3 -m venv rrr-env
+source rrr-env/bin/activate
+```
+
+#### c. Using venv (Windows)
+```bash
+# Create and activate a venv environment on Windows PowerShell
+python -m venv rrr-env
+.\rrr-env\Scripts\Activate.ps1
+
+```
+### 2. Install Core Dependencies
+Install libraries commonly used across reproductions:
+```bash
+pip install --upgrade pip
+pip install jupyter numpy pandas matplotlib scipy scikit-learn
+```
+Tip: If you plan to run deep learning experiments, install a GPU-enabled framework:
+```bash
+# PyTorch with CUDA (if your GPU and drivers support it)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+
+```
+### 3. Install Reproduction-Specific Requirements
+Most notebooks reference their own requirements.txt or environment.yml. From the root directory, run:
+```bash
+# For pip-based requirements
+pip install -r requirements.txt
+
+# For Conda environment files
+conda env update --file environment.yml --prune
+```
+Note: If a notebook lives in its own folder with a separate requirements.txt (e.g., satmae/requirements.txt), cd into that folder before running the install command.
+
+### 4. Launch Jupyter
+Start the interactive environment and open notebooks:
+```bash
+# Launch Jupyter Lab (recommended)
+jupyter lab
+
+# Or launch classic Jupyter Notebook
+jupyter notebook
+```
+You should see a browser window displaying the repository contents. Click on a .ipynb file to get started.
+
+## Usage
+Follow these general guidelines when working with the reproduction notebooks:
+
+Select a Notebook: Identify the paper you want to reproduce (e.g., textnerf.ipynb).
+
+Run Cells Sequentially: Execute cells in order to ensure environment setup, data download, model execution, and result verification occur in the correct sequence.
+
+Data Handling: Notebooks automatically download or preprocess data when possible. If manual steps are required, instructions are provided in markdown cells.
+
+Verify Results: Many notebooks include assertions or comparison tables that display the paper’s reported metrics alongside reproduced values.
+
+Troubleshooting: Check error messages carefully, ensure you activated the correct environment, and validate that dependencies match the versions specified in the notebook. Opening an issue with detailed logs helps maintainers assist you faster.
+
+Example: To reproduce the AdaSlot experiments:
+```bash
+1. Open `AdaSlot.ipynb` in Jupyter Lab
+2. Run the setup cell (clones the original repo and installs its dependencies)
+3. Execute data download cells
+4. Run training and evaluation cells
+```
+## Contributing
+We welcome contributions at any level. To add a new reproduction or improve existing ones:
+
+Fork & Branch: Fork this repository and create a feature branch.
+
+Add Your Reproduction: Follow the Adding a New Reproduction guidelines.
+
+Document Thoroughly: Ensure your notebook includes context, code comments, and result comparisons.
+
+Open a Pull Request: Describe your changes, link to the paper, and summarize reproduction results.
+
+All contributions should include clear instructions and be tested end-to-end in a fresh environment.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for full details.
+Reproduced code relies on third-party repositories and datasets, which maintain their original licenses.
+
+## Contact
+GitHub Issues: Open issues or discussions in the repository for questions or suggestions.
+
+I appreciate your feedback and contributions to strengthen reproducibility in research!
